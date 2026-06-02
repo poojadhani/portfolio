@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Pooja Putta | Data Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#06080b;color:#e8e4dc;font-family:'Outfit',sans-serif;overflow-x:hidden;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+:root{
+  --bg0:#06080b;--bg1:#0b0e14;--bg2:#0f1319;--bg3:#141a24;
+  --ln:#1c2330;--ln2:#242e40;
+  --tx0:#e8e4dc;--tx1:#8a9ab2;--tx2:#4a5670;--tx3:#2e3a4c;
+  --teal:#4ec9b0;--teal2:#2a9d8f;--td:#0a1e1a;
+  --gold:#e6b84a;--gold2:#c49a2e;--gd:#1e1608;
+  --rose:#e06c75;--rose2:#c05560;--rd:#1e0a0c;
+  --violet:#bb9af7;--violet2:#9678d4;--vd:#140e22;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --mono:'JetBrains Mono',monospace;
+}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--bg0)}
+::-webkit-scrollbar-thumb{background:var(--ln2)}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:1rem 4rem;background:rgba(6,8,11,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--ln)}
+.nb{display:flex;align-items:center;gap:.65rem}
+.nb-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 7px var(--teal)}
+.nb-name{font-family:var(--mono);font-size:12px;color:var(--tx0);letter-spacing:.09em}
+.nl{display:flex;gap:2rem}
+.nl a{font-family:var(--mono);font-size:11px;color:var(--tx1);letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+.nl a:hover{color:var(--tx0)}
+.nav-right{display:flex;align-items:center;gap:.75rem}
+.nc{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:.46rem 1.1rem;border:1px solid var(--teal2);color:var(--teal);transition:all .2s}
+.nc:hover{background:var(--teal);color:var(--bg0)}
+.nr{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:.46rem 1.1rem;border:1px solid var(--ln2);color:var(--tx1);transition:all .2s}
+.nr:hover{border-color:var(--tx2);color:var(--tx0)}
+
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:9rem 4rem 5rem;position:relative;overflow:hidden}
+.hbg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 65% 55% at 8% 38%,rgba(12,34,52,.65) 0%,transparent 68%),radial-gradient(ellipse 45% 38% at 88% 72%,rgba(14,28,18,.45) 0%,transparent 68%)}
+.hgrid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--ln) 1px,transparent 1px),linear-gradient(90deg,var(--ln) 1px,transparent 1px);background-size:58px 58px;opacity:.28;mask-image:radial-gradient(ellipse 85% 85% at 50% 50%,black 25%,transparent 78%)}
+.hav{position:absolute;top:6.2rem;right:4rem;font-family:var(--mono);font-size:10px;color:var(--teal);border:1px solid var(--teal2);padding:.42rem .95rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:.45rem;background:rgba(0,0,0,.45)}
+.pulse{width:5px;height:5px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.hey{font-family:var(--mono);font-size:11px;color:var(--teal);letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.75rem;display:flex;align-items:center;gap:.9rem}
+.hey::before{content:'';width:36px;height:1px;background:var(--teal)}
+.hn{font-family:var(--serif);font-size:clamp(4.5rem,9.5vw,9.2rem);line-height:.91;font-weight:400;color:var(--tx0);margin-bottom:.45rem}
+.hn em{font-style:italic;color:var(--teal)}
+.hr2{font-family:var(--mono);font-size:13px;color:var(--tx1);letter-spacing:.06em;margin-bottom:1.5rem}
+.roles-primary{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.55rem}
+.roles-secondary{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.75rem;align-items:center}
+.role-pill{font-family:var(--mono);font-size:11px;letter-spacing:.07em;padding:.28rem .72rem}
+.role-pill.pri{color:var(--teal);border:1px solid var(--teal2);background:var(--td)}
+.role-pill.sec{color:var(--tx2);border:1px solid var(--ln2);font-size:10px}
+.role-pill.lbl{color:var(--tx3);border:none;font-size:10px;padding-left:0}
+.cert-row{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:2.5rem}
+.cert{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:.26rem .68rem;color:var(--gold);border:1px solid var(--gold2);background:var(--gd)}
+.ha{display:flex;gap:1rem;flex-wrap:wrap}
+.bt{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 2rem;background:var(--teal);color:var(--bg0);font-weight:500;transition:background .2s}
+.bt:hover{background:var(--teal2)}
+.bg{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 2rem;border:1px solid var(--ln2);color:var(--tx1);transition:all .2s}
+.bg:hover{border-color:var(--tx2);color:var(--tx0)}
+.hm{display:flex;gap:4rem;margin-top:4.5rem;padding-top:2.5rem;border-top:1px solid var(--ln)}
+.mv{font-family:var(--serif);font-size:2.9rem;color:var(--teal);display:block;line-height:1;font-weight:600}
+.ml{font-family:var(--mono);font-size:10px;color:var(--tx2);text-transform:uppercase;letter-spacing:.12em;margin-top:.38rem}
+
+/* ── SECTION SHELL ── */
+.sec{padding:7rem 4rem}
+.wrap{max-width:1140px;margin:0 auto}
+.eye{font-family:var(--mono);font-size:10px;color:var(--teal);letter-spacing:.22em;text-transform:uppercase;margin-bottom:.6rem}
+.sh{font-family:var(--serif);font-size:clamp(2.4rem,4.5vw,3.8rem);color:var(--tx0);margin-bottom:3.5rem;font-weight:400;line-height:1.08}
+.sh em{font-style:italic;color:var(--teal)}
+.rule{height:1px;background:var(--ln)}
+
+/* ── ABOUT ── */
+#about{background:var(--bg1)}
+.ag{display:grid;grid-template-columns:1.1fr .9fr;gap:6rem;align-items:start}
+.ac p{font-size:.94rem;color:var(--tx1);line-height:1.95;margin-bottom:1.35rem;font-weight:300}
+.ac p strong{color:var(--tx0);font-weight:500}
+.am{display:flex;flex-direction:column;gap:1px;border:1px solid var(--ln);background:var(--ln)}
+.ar{background:var(--bg1);padding:1.05rem 1.4rem;display:grid;grid-template-columns:110px 1fr;gap:1rem;align-items:start}
+.al{font-family:var(--mono);font-size:10px;color:var(--tx2);letter-spacing:.1em;text-transform:uppercase;padding-top:.1rem}
+.av{font-size:.87rem;color:var(--tx0);line-height:1.55}
+
+/* ── EXPERIENCE ── */
+#experience{background:var(--bg0)}
+.ei{display:grid;grid-template-columns:210px 1fr;gap:4.5rem;padding:3.5rem 0;border-bottom:1px solid var(--ln)}
+.ei:last-child{border-bottom:none}
+.es{padding-top:.25rem}
+.ep{font-family:var(--mono);font-size:11px;color:var(--tx2);line-height:1.7}
+.eco{font-family:var(--mono);font-size:10px;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;margin-top:.55rem}
+.eloc{font-family:var(--mono);font-size:10px;color:var(--tx2);margin-top:.2rem}
+.etitle{font-family:var(--serif);font-size:1.9rem;color:var(--tx0);margin-bottom:1.3rem;font-weight:400;line-height:1.08}
+.ebl{display:flex;flex-direction:column;gap:.55rem}
+.ebl li{font-size:.87rem;color:var(--tx1);line-height:1.82;padding-left:1.3rem;position:relative;font-weight:300}
+.ebl li::before{content:'▸';position:absolute;left:0;color:var(--teal);font-size:.72rem;top:.14rem}
+.echips{display:flex;flex-wrap:wrap;gap:.33rem;margin-top:1.35rem}
+.ch{font-family:var(--mono);font-size:9px;color:var(--tx2);background:var(--bg2);border:1px solid var(--ln);padding:.22rem .58rem;letter-spacing:.04em}
+
+/* ── FEATURED CASE STUDY ── */
+#casestudy{background:var(--bg1)}
+.cs-intro{font-size:.95rem;color:var(--tx1);line-height:1.85;max-width:680px;margin-bottom:3.5rem;font-weight:300}
+.cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.cs-left{}
+.cs-section-label{font-family:var(--mono);font-size:10px;color:var(--teal);letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--ln)}
+
+/* architecture flow diagram */
+.arch-flow{display:flex;flex-direction:column;gap:0;margin-bottom:2.5rem}
+.arch-step{display:flex;align-items:stretch;gap:0}
+.arch-node{background:var(--bg2);border:1px solid var(--ln2);padding:.85rem 1.2rem;flex:1;position:relative}
+.arch-node-label{font-family:var(--mono);font-size:11px;color:var(--teal);letter-spacing:.06em}
+.arch-node-sub{font-family:var(--mono);font-size:10px;color:var(--tx2);margin-top:.2rem}
+.arch-arrow{display:flex;align-items:center;justify-content:center;padding:.5rem 0;color:var(--tx3);font-size:1.1rem;line-height:1}
+
+/* results grid */
+.results-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ln);margin-bottom:2rem}
+.result-cell{background:var(--bg2);padding:1rem 1.2rem}
+.result-num{font-family:var(--serif);font-size:2rem;color:var(--teal);display:block;line-height:1;font-weight:600}
+.result-lbl{font-family:var(--mono);font-size:10px;color:var(--tx2);margin-top:.3rem;letter-spacing:.06em}
+
+.cs-right{}
+.cs-challenges{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2.5rem}
+.cs-challenge{background:var(--bg2);border-left:2px solid var(--teal2);padding:.9rem 1.2rem}
+.cs-challenge-title{font-family:var(--mono);font-size:10px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.35rem}
+.cs-challenge-body{font-size:.83rem;color:var(--tx1);line-height:1.7;font-weight:300}
+
+.cs-stack-full{display:flex;flex-wrap:wrap;gap:.35rem}
+.cstag{font-family:var(--mono);font-size:9px;color:var(--teal);border:1px solid rgba(78,201,176,.25);padding:.18rem .5rem}
+.cs-github-link{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:11px;color:var(--teal);border:1px solid var(--teal2);padding:.6rem 1.2rem;margin-top:1.5rem;transition:all .2s;letter-spacing:.08em;text-transform:uppercase}
+.cs-github-link:hover{background:var(--teal);color:var(--bg0)}
+.cs-github-link::after{content:'↗'}
+
+/* ── PROJECTS ── */
+#projects{background:var(--bg0)}
+.proj-filter{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.pf-btn{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:.42rem .95rem;border:1px solid var(--ln2);color:var(--tx2);background:none;cursor:pointer;transition:all .2s}
+.pf-btn.on{border-color:var(--teal);color:var(--teal);background:var(--td)}
+.pf-btn:hover{color:var(--tx1)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ln)}
+.pc{background:var(--bg0);padding:2rem 1.85rem;display:flex;flex-direction:column;transition:background .25s;position:relative}
+.pc:hover{background:var(--bg2)}
+.pc.hidden{display:none}
+.pc-toprow{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.55rem}
+.pnum{font-family:var(--mono);font-size:10px;color:var(--tx3)}
+.pcat{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:.15rem .5rem}
+.pcat.de{color:var(--teal);border:1px solid rgba(78,201,176,.3);background:var(--td)}
+.pcat.ai{color:var(--violet);border:1px solid rgba(187,154,247,.3);background:var(--vd)}
+.pcat.res{color:var(--gold);border:1px solid rgba(230,184,74,.3);background:var(--gd)}
+.plabel{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:.16rem .52rem;margin-bottom:.72rem;display:inline-block}
+.plabel.feat{color:var(--teal);border:1px solid var(--teal2);background:var(--td)}
+.plabel.prod{color:var(--violet);border:1px solid var(--violet2);background:var(--vd)}
+.plabel.pub{color:var(--gold);border:1px solid var(--gold2);background:var(--gd)}
+.plabel.active{color:var(--rose);border:1px solid var(--rose2);background:var(--rd)}
+.plabel.prog{color:var(--tx2);border:1px solid var(--ln2);background:transparent}
+.plabel.teal{color:var(--teal);border:1px solid var(--teal2);background:var(--td)}
+.ptitle{font-family:var(--serif);font-size:1.28rem;color:var(--tx0);margin-bottom:.7rem;line-height:1.2;font-weight:400}
+.pdesc{font-size:.82rem;color:var(--tx1);line-height:1.78;margin-bottom:1.1rem;flex:1;font-weight:300}
+.pstack{display:flex;flex-wrap:wrap;gap:.28rem;margin-bottom:.85rem}
+.stag{font-family:var(--mono);font-size:9px;color:var(--teal);border:1px solid rgba(78,201,176,.22);padding:.15rem .46rem}
+.plinks{display:flex;gap:1rem;align-items:center}
+.plink{font-family:var(--mono);font-size:10px;color:var(--tx2);letter-spacing:.08em;text-transform:uppercase;transition:color .2s;display:inline-flex;align-items:center;gap:.22rem}
+.plink:hover{color:var(--teal)}
+.plink.gh::after{content:'↗';font-size:.88em}
+
+/* ── SKILLS ── */
+#skills{background:var(--bg1)}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.8rem}
+.sgh{font-family:var(--mono);font-size:10px;color:var(--teal);letter-spacing:.16em;text-transform:uppercase;margin-bottom:.88rem;padding-bottom:.65rem;border-bottom:1px solid var(--ln)}
+.sgp{display:flex;flex-wrap:wrap;gap:.32rem}
+.pill{font-family:var(--mono);font-size:10px;color:var(--tx1);background:var(--bg2);border:1px solid var(--ln);padding:.28rem .62rem;transition:all .2s;cursor:default}
+.pill:hover{color:var(--teal);border-color:var(--teal2)}
+
+/* ── CONTACT ── */
+#contact{background:var(--bg0);text-align:center}
+.cw{max-width:560px;margin:0 auto}
+.cw p{font-size:.95rem;color:var(--tx1);line-height:1.92;margin-bottom:3rem;font-weight:300}
+.cls{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.cl{font-family:var(--mono);font-size:11px;color:var(--tx1);letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--ln2);padding:.78rem 1.7rem;transition:all .2s}
+.cl:hover{color:var(--teal);border-color:var(--teal2)}
+
+footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.fl{font-family:var(--mono);font-size:10px;color:var(--tx2)}
+.fr{font-family:var(--mono);font-size:10px;color:var(--teal);display:flex;align-items:center;gap:.4rem}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+.d5{transition-delay:.4s}.d6{transition-delay:.48s}.d7{transition-delay:.56s}.d8{transition-delay:.64s}
+
+/* ── INLINE ROLE LINES ── */
+.hroles{font-size:1rem;color:var(--tx0);letter-spacing:.03em;margin-bottom:.4rem;font-weight:400;line-height:1.6}
+.hroles2{font-family:var(--mono);font-size:11px;color:var(--tx2);letter-spacing:.04em;margin-bottom:1.75rem}
+
+/* ── COLLAPSIBLE CASE STUDY ── */
+.cs-teaser{}
+.cs-full{display:none;margin-top:2rem}
+.cs-full.open{display:block}
+.cs-toggle{font-family:var(--mono);font-size:11px;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;background:none;border:1px solid var(--teal2);padding:.55rem 1.25rem;cursor:pointer;transition:all .2s;margin-top:1.75rem;display:inline-flex;align-items:center;gap:.5rem}
+.cs-toggle:hover{background:var(--teal);color:var(--bg0)}
+.cs-toggle-icon{transition:transform .3s;display:inline-block;font-style:normal}
+.cs-toggle.open .cs-toggle-icon{transform:rotate(45deg)}
+
+/* ── HACKATHONS ── */
+#hackathons{background:var(--bg0)}
+.hk-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ln)}
+.hk-card{background:var(--bg0);padding:2.2rem 2rem;transition:background .25s}
+.hk-card:hover{background:var(--bg2)}
+.hk-tag{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:.15rem .5rem;color:var(--violet);border:1px solid var(--violet2);background:var(--vd);display:inline-block;margin-bottom:.65rem}
+.hk-event{font-family:var(--mono);font-size:10px;color:var(--tx2);letter-spacing:.06em;margin-bottom:.5rem}
+.hk-title{font-family:var(--serif);font-size:1.28rem;color:var(--tx0);margin-bottom:.75rem;line-height:1.2;font-weight:400}
+.hk-desc{font-size:.83rem;color:var(--tx1);line-height:1.8;margin-bottom:1.1rem;font-weight:300}
+.hk-stack{display:flex;flex-wrap:wrap;gap:.3rem}
+.htag{font-family:var(--mono);font-size:9px;color:var(--violet);border:1px solid rgba(187,154,247,.22);padding:.15rem .46rem}
+
+/* ── BEYOND CODE ── */
+#beyond{background:var(--bg1)}
+.beyond-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ln)}
+.beyond-card{background:var(--bg1);padding:2rem 1.85rem;transition:background .25s;text-align:center}
+.beyond-card:hover{background:var(--bg2)}
+.beyond-icon{font-size:2rem;margin-bottom:.85rem;display:block}
+.beyond-title{font-family:var(--serif);font-size:1.18rem;color:var(--tx0);margin-bottom:.38rem;font-weight:400}
+.beyond-sub{font-size:.82rem;color:var(--tx1);line-height:1.7;font-weight:300}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){.pgrid{grid-template-columns:repeat(2,1fr)}.cs-grid{grid-template-columns:1fr;gap:3rem}}
+@media(max-width:1024px){.ag{grid-template-columns:1fr;gap:3rem}.sgrid{grid-template-columns:repeat(2,1fr)}.hk-grid{grid-template-columns:1fr}.beyond-row{grid-template-columns:1fr}}
+@media(max-width:768px){nav{padding:1rem 1.5rem}.nl{gap:1.5rem}#hero,.sec{padding:5rem 1.5rem 4rem}.hav{display:none}.hm{gap:2rem;flex-wrap:wrap}.ei{grid-template-columns:1fr;gap:1rem}.es{display:flex;gap:2rem;flex-wrap:wrap}.pgrid{grid-template-columns:1fr}.sgrid{grid-template-columns:1fr}footer{flex-direction:column;text-align:center}.results-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.nl{display:none}.hn{font-size:3.8rem}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nb"><span class="nb-dot"></span><span class="nb-name">Pooja Putta</span></div>
+  <div class="nl">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#casestudy">Case Study</a>
+    <a href="#projects">Projects</a>
+    <a href="#hackathons">Hackathons</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="mailto:poojaputta3699@gmail.com" class="nc">Hire Me</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hbg"></div>
+  <div class="hgrid"></div>
+  <div class="hav"><span class="pulse"></span>Open to New Roles</div>
+  <p class="hey rv">3+ Years · Azure · AWS · Databricks · Snowflake</p>
+  <h1 class="hn rv d1">Pooja<br><em>Putta.</em></h1>
+  <p class="hr2 rv d2">M.Eng. Computer Science · University of Cincinnati · 4.0 GPA</p>
+  <p class="hroles rv d2">Data Engineer &nbsp;·&nbsp; Analytics Engineer &nbsp;·&nbsp; Data Analyst &nbsp;·&nbsp; BI Engineer</p>
+  <p class="hroles2 rv d3">Also open to: AI/ML Engineer &nbsp;·&nbsp; ML Data Engineer &nbsp;·&nbsp; MLOps Engineer</p>
+  <div class="cert-row rv d3">
+    <span class="cert">✓ Azure Data Engineer Associate (DP-203)</span>
+    <span class="cert">✓ AWS Certified Data Engineer</span>
+    <span class="cert">✓ IBM Data Engineering Professional</span>
+  </div>
+  <div class="ha rv d4">
+    <a href="#projects" class="bt">View Projects</a>
+    <a href="#about" class="bg">About Me</a>
+  </div>
+  <div class="hm rv d4">
+    <div><span class="mv">3+</span><span class="ml">Years experience</span></div>
+    <div><span class="mv">4.0</span><span class="ml">M.Eng. GPA</span></div>
+    <div><span class="mv">5TB+</span><span class="ml">Daily data processed</span></div>
+    <div><span class="mv">&lt;5 min</span><span class="ml">Latency · T+1 to real-time</span></div>
+  </div>
+</section>
+<div class="rule"></div>
+
+<!-- ABOUT -->
+<section id="about" class="sec">
+  <div class="wrap">
+    <p class="eye rv">Who I am</p>
+    <h2 class="sh rv d1"><em>Engineering</em> pipelines<br>teams depend on daily</h2>
+    <div class="ag">
+      <div class="ac rv">
+        <p>I'm a <strong>Data Engineer</strong> with 3+ years building cloud data pipelines, real-time streaming systems, and analytics platforms across Azure, AWS, Databricks, and Snowflake — processing 5TB+ daily across CDC replication, streaming ingestion, and Medallion Architecture.</p>
+        <p>At <strong>Wells Fargo</strong>, I owned ELT pipelines on Azure Data Factory and Databricks ingesting 5TB+ of daily banking transactions, built Kafka producers/consumers cutting latency from T+1 to under 5 minutes, and sustained 99.9% SLA across all client-facing pipelines.</p>
+        <p>Currently building an <strong>AI-powered cardiac vessel segmentation pipeline</strong> (U-Net, 0.897 Dice) for intraoperative AR at UC Medical Center — reducing surgical segmentation from days to minutes.</p>
+      </div>
+      <div class="am rv d1">
+        <div class="ar"><span class="al">Education</span><span class="av">M.Eng. Computer Science · University of Cincinnati · GPA 4.0 / 4.0</span></div>
+        <div class="ar"><span class="al">Certs</span><span class="av">Azure DP-203 · AWS Data Engineer · IBM Data Engineering</span></div>
+        <div class="ar"><span class="al">Location</span><span class="av">Cincinnati, OH · Open to remote &amp; US relocation</span></div>
+        <div class="ar"><span class="al">Primary</span><span class="av">Data Engineer · Analytics Engineer · Data Analyst · BI Engineer</span></div>
+        <div class="ar"><span class="al">Also open</span><span class="av">AI/ML Engineer · ML Data Engineer · MLOps Engineer</span></div>
+        <div class="ar"><span class="al">Email</span><span class="av"><a href="mailto:poojaputta3699@gmail.com" style="color:var(--teal)">poojaputta3699@gmail.com</a></span></div>
+        <div class="ar"><span class="al">Phone</span><span class="av"><a href="tel:+15135451119" style="color:var(--teal)">+1 513-545-1119</a></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="rule"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="sec">
+  <div class="wrap">
+    <p class="eye rv">Career</p>
+    <h2 class="sh rv d1">Work <em>Experience</em></h2>
+    <div class="ei rv">
+      <div class="es">
+        <div class="ep">Mar 2026<br>Present</div>
+        <div class="eco">UC Medical Center</div>
+        <div class="eloc">Cincinnati, OH</div>
+      </div>
+      <div>
+        <div class="etitle">Research Associate</div>
+        <ul class="ebl">
+          <li>Building an AI data pipeline that ingests chest CT scans, preprocesses 1,559 DICOM images per patient, and segments 3 cardiac vessels (Aorta, LAD, LIMA) using a U-Net model — reducing surgical segmentation from days to minutes</li>
+          <li>Engineered the full ML pipeline: DICOM ingestion → voxelization → augmentation → model training → inference → colored STL export for 3D printing and intraoperative AR overlay</li>
+          <li>Achieved 0.897 Dice score on LIMA; applied weighted loss (10× class-imbalance penalty), tf.data prefetch, and incremental retraining to support new IRB-approved patient batches without full restarts</li>
+        </ul>
+        <div class="echips"><span class="ch">TensorFlow</span><span class="ch">U-Net</span><span class="ch">DICOM</span><span class="ch">Python</span><span class="ch">3D STL</span><span class="ch">NumPy</span></div>
+      </div>
+    </div>
+    <div class="ei rv">
+      <div class="es">
+        <div class="ep">Jan 2022<br>Jul 2024</div>
+        <div class="eco">Wells Fargo</div>
+        <div class="eloc">Hyderabad, India</div>
+      </div>
+      <div>
+        <div class="etitle">Data Engineer</div>
+        <ul class="ebl">
+          <li>Designed and owned ELT pipelines on Azure Data Factory and Databricks, ingesting 5TB+ of daily banking transactions into a Delta Lake Medallion Architecture (Bronze/Silver/Gold) for 3 regional analytics teams</li>
+          <li>Built Apache Kafka (Confluent) producers/consumers for real-time transaction and clickstream ingestion — cut data latency from T+1 batch to under 5 minutes, enabling near-real-time fraud monitoring dashboards</li>
+          <li>Optimized Databricks Spark jobs via partitioning, Z-ordering, vectorized Parquet I/O, and Delta Lake compaction — reduced cloud compute costs 20% and improved query performance 50%</li>
+          <li>Deployed pipeline observability with Splunk alerting and automated schema validation; reduced silent data failures 25% and sustained 99.9% SLA on all client-facing pipelines</li>
+          <li>Enforced SOX, GDPR, and CCPA compliance via PII masking, IAM access controls, and data lineage tracking; built CI/CD with GitHub Actions and Azure DevOps for automated PySpark deployment</li>
+        </ul>
+        <div class="echips"><span class="ch">Azure ADF</span><span class="ch">Databricks</span><span class="ch">Delta Lake</span><span class="ch">Kafka (Confluent)</span><span class="ch">PySpark</span><span class="ch">Splunk</span><span class="ch">Azure DevOps</span><span class="ch">GitHub Actions</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="rule"></div>
+
+<!-- FEATURED CASE STUDY — CDC Pipeline -->
+<section id="casestudy" class="sec">
+  <div class="wrap">
+    <p class="eye rv">Deep Dive</p>
+    <h2 class="sh rv d1">Featured Case Study:<br><em>CDC Replication Pipeline</em></h2>
+
+    <!-- TEASER — always visible -->
+    <div class="cs-teaser rv d2">
+      <p class="cs-intro">A personal project simulating a change data capture system — from PostgreSQL source to Redshift Serverless analytics target. Built to demonstrate production CDC patterns: schema evolution, idempotent consumers, end-to-end data lineage, and infrastructure-as-code.</p>
+      <div style="display:flex;gap:3rem;flex-wrap:wrap;margin-top:1.75rem">
+        <div><span style="font-family:var(--mono);font-size:10px;color:var(--tx2);text-transform:uppercase;letter-spacing:.1em">Stack</span><br><span style="font-size:.88rem;color:var(--tx1);margin-top:.35rem;display:block">Debezium · Amazon MSK · AWS Glue · Redshift · OpenLineage · dbt · Terraform</span></div>
+        <div><span style="font-family:var(--mono);font-size:10px;color:var(--tx2);text-transform:uppercase;letter-spacing:.1em">Key result</span><br><span style="font-family:var(--serif);font-size:1.5rem;color:var(--teal);display:block;margin-top:.2rem">&lt;30s replication lag &nbsp;·&nbsp; 5K+ events/sec</span></div>
+      </div>
+      <a href="https://github.com/Poojareddy0/cdc_replication" target="_blank" class="cs-github-link" style="margin-top:1.25rem">View on GitHub</a>
+      <button class="cs-toggle rv d3" id="cs-btn" onclick="toggleCS()">Read more <em class="cs-toggle-icon">+</em></button>
+    </div>
+
+    <!-- FULL DETAIL — hidden until toggle -->
+    <div class="cs-full" id="cs-full">
+      <div class="cs-grid">
+        <div class="cs-left">
+          <div class="cs-section-label">Pipeline Architecture</div>
+          <div class="arch-flow">
+            <div class="arch-step"><div class="arch-node"><div class="arch-node-label">PostgreSQL</div><div class="arch-node-sub">Source DB · WAL logical replication enabled</div></div></div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-step"><div class="arch-node"><div class="arch-node-label">Debezium Connector</div><div class="arch-node-sub">Captures row-level INSERT / UPDATE / DELETE events</div></div></div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-step"><div class="arch-node"><div class="arch-node-label">Amazon MSK (Kafka)</div><div class="arch-node-sub">Avro-serialized events · Schema Registry</div></div></div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-step"><div class="arch-node"><div class="arch-node-label">AWS Glue Consumer</div><div class="arch-node-sub">Idempotent writes · DynamoDB offset tracking · schema evolution</div></div></div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-step"><div class="arch-node"><div class="arch-node-label">Redshift Serverless</div><div class="arch-node-sub">dbt models · data contracts · OpenLineage lineage graph</div></div></div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-step"><div class="arch-node"><div class="arch-node-label">Airflow + Marquez</div><div class="arch-node-sub">Orchestration · health checks · visual lineage UI</div></div></div>
+          </div>
+          <div class="cs-section-label" style="margin-top:2rem">Results</div>
+          <div class="results-grid">
+            <div class="result-cell"><span class="result-num">&lt;30s</span><span class="result-lbl">Replication lag</span></div>
+            <div class="result-cell"><span class="result-num">5K+</span><span class="result-lbl">Events/sec throughput</span></div>
+            <div class="result-cell"><span class="result-num">Zero</span><span class="result-lbl">Manual schema interventions</span></div>
+            <div class="result-cell"><span class="result-num">100%</span><span class="result-lbl">Idempotent delivery</span></div>
+          </div>
+          <div class="cs-section-label" style="margin-top:2rem">Full Stack</div>
+          <div class="cs-stack-full">
+            <span class="cstag">Debezium</span><span class="cstag">PostgreSQL WAL</span><span class="cstag">Amazon MSK</span><span class="cstag">Avro + Schema Registry</span><span class="cstag">AWS Glue</span><span class="cstag">Redshift Serverless</span><span class="cstag">DynamoDB</span><span class="cstag">OpenLineage</span><span class="cstag">Marquez</span><span class="cstag">dbt</span><span class="cstag">Airflow</span><span class="cstag">Terraform</span><span class="cstag">GitHub Actions</span>
+          </div>
+        </div>
+        <div class="cs-right">
+          <div class="cs-section-label">Key Engineering Challenges</div>
+          <div class="cs-challenges">
+            <div class="cs-challenge"><div class="cs-challenge-title">Schema Evolution Without Downtime</div><div class="cs-challenge-body">Source tables change without warning. Built Avro schema evolution with Schema Registry compatibility checks and AWS Glue schema auto-detection — Redshift targets adapt to column additions or type changes without manual intervention or pipeline restarts.</div></div>
+            <div class="cs-challenge"><div class="cs-challenge-title">Exactly-Once Delivery</div><div class="cs-challenge-body">Kafka consumers can reprocess messages on failure, causing duplicate rows. Solved with DynamoDB offset tracking and idempotent upsert logic in Glue — every event is applied exactly once regardless of retries.</div></div>
+            <div class="cs-challenge"><div class="cs-challenge-title">Data Lineage Across the Full Stack</div><div class="cs-challenge-body">Integrated OpenLineage emitters at each pipeline stage, feeding Marquez for a visual lineage graph from PostgreSQL source through to Redshift dbt marts — any downstream issue can be traced back to its origin table.</div></div>
+            <div class="cs-challenge"><div class="cs-challenge-title">dbt Contracts at CI Time</div><div class="cs-challenge-body">dbt data contracts enforce column names and types. If a source schema change breaks a downstream mart, the CI pipeline catches it before merge — not after data has silently degraded in production.</div></div>
+            <div class="cs-challenge"><div class="cs-challenge-title">Infrastructure as Code</div><div class="cs-challenge-body">Every AWS resource — MSK cluster, Glue jobs, Redshift Serverless, DynamoDB table, IAM roles, VPC — is Terraform-managed. The entire stack can be torn down and recreated in one command.</div></div>
+          </div>
+        </div>
+      </div>
+      <button class="cs-toggle" style="margin-top:2rem" onclick="toggleCS()">Show less <em class="cs-toggle-icon" style="transform:rotate(45deg)">+</em></button>
+    </div>
+  </div>
+</section>
+<div class="rule"></div>
+
+<!-- PROJECTS — all 7 with specific GitHub links, no scores, short descriptions -->
+<section id="projects" class="sec">
+  <div class="wrap">
+    <p class="eye rv">Portfolio</p>
+    <h2 class="sh rv d1">Selected <em>Projects</em></h2>
+    <div class="proj-filter rv d2">
+      <button class="pf-btn on" onclick="filterProj('all',this)">All Projects</button>
+      <button class="pf-btn" onclick="filterProj('de',this)">Data Engineering</button>
+      <button class="pf-btn" onclick="filterProj('ai',this)">AI &amp; ML</button>
+      <button class="pf-btn" onclick="filterProj('res',this)">Research</button>
+    </div>
+
+    <div class="pgrid" id="pgrid">
+
+      <!-- 01 CDC — already has case study, so link both -->
+      <div class="pc rv d1" data-cat="de">
+        <div class="pc-toprow"><span class="pcat de">Data Engineering</span></div>
+        <span class="plabel feat">Featured Project</span>
+        <div class="ptitle">CDC Replication Pipeline</div>
+        <div class="pdesc">PostgreSQL WAL → Debezium → Amazon MSK → AWS Glue → Redshift Serverless. Idempotent consumers with DynamoDB offset tracking, Avro schema evolution, OpenLineage lineage graph, and full Terraform-managed AWS infra. Replication lag under 30 seconds.</div>
+        <div class="pstack"><span class="stag">Debezium</span><span class="stag">Amazon MSK</span><span class="stag">AWS Glue</span><span class="stag">Redshift</span><span class="stag">OpenLineage</span><span class="stag">dbt</span><span class="stag">Terraform</span></div>
+        <div class="plinks">
+          <a href="https://github.com/Poojareddy0/cdc_replication" target="_blank" class="plink gh">GitHub</a>
+          <a href="#casestudy" class="plink">Case Study ↓</a>
+        </div>
+      </div>
+
+      <!-- 02 RAG -->
+      <div class="pc rv d2" data-cat="ai">
+        <div class="pc-toprow"><span class="pcat ai">AI &amp; ML</span></div>
+        <span class="plabel prod">Production-Style Build</span>
+        <div class="ptitle">AI Data Pipeline + RAG with Drift Detection</div>
+        <div class="pdesc">Hybrid retrieval pipeline combining Pinecone vector search and Snowflake structured features. MMD drift detection flags embedding distribution shifts before they degrade retrieval quality. MLflow cost tracking per run across 10K+ events/sec on 8 Kafka partitions.</div>
+        <div class="pstack"><span class="stag">OpenAI</span><span class="stag">Pinecone</span><span class="stag">Snowflake</span><span class="stag">Kafka</span><span class="stag">MLflow</span><span class="stag">MMD Drift</span><span class="stag">Airflow</span></div>
+        <div class="plinks"><a href="https://github.com/Poojareddy0/ai_pipeline" target="_blank" class="plink gh">GitHub</a></div>
+      </div>
+
+      <!-- 03 FRAUD -->
+      <div class="pc rv d3" data-cat="de">
+        <div class="pc-toprow"><span class="pcat de">Data Engineering</span></div>
+        <span class="plabel prod">Production-Style Build</span>
+        <div class="ptitle">Real-Time Fraud Detection Pipeline</div>
+        <div class="pdesc">Transaction streams via Azure Event Hubs → PySpark anomaly detection with dead-letter queue → dbt Bronze/Silver/Gold layers provisioned via Terraform. Automated Great Expectations quality gates at each layer. Live Power BI dashboards with per-event audit logging.</div>
+        <div class="pstack"><span class="stag">Azure Event Hubs</span><span class="stag">PySpark</span><span class="stag">dbt</span><span class="stag">Great Expectations</span><span class="stag">Terraform</span><span class="stag">Power BI</span></div>
+        <div class="plinks"><a href="https://github.com/Poojareddy0/fraud-detection-pipeline" target="_blank" class="plink gh">GitHub</a></div>
+      </div>
+
+      <!-- 04 LAKEHOUSE -->
+      <div class="pc rv d4" data-cat="de">
+        <div class="pc-toprow"><span class="pcat de">Data Engineering</span></div>
+        <span class="plabel prod">Production-Style Build</span>
+        <div class="ptitle">Cloud-Native Lakehouse with FinOps</div>
+        <div class="pdesc">Medallion architecture: Bronze (Parquet/S3) → Silver (Apache Iceberg) → Gold (Snowflake). AWS Cost Explorer + Snowflake ACCOUNT_USAGE for daily per-tier cost tracking. Automated partition pruning and cluster rightsizing with dbt data contracts enforced at CI time.</div>
+        <div class="pstack"><span class="stag">AWS S3</span><span class="stag">Apache Iceberg</span><span class="stag">Databricks</span><span class="stag">Snowflake</span><span class="stag">dbt</span><span class="stag">Airflow</span><span class="stag">Terraform</span></div>
+        <div class="plinks"><a href="https://github.com/Poojareddy0/lakehouse_snowflake" target="_blank" class="plink gh">GitHub</a></div>
+      </div>
+
+      <!-- 05 OUTREACH AI -->
+      <div class="pc rv d5" data-cat="ai">
+        <div class="pc-toprow"><span class="pcat ai">AI &amp; ML</span></div>
+        <span class="plabel prod">Production-Style Build</span>
+        <div class="ptitle">OutreachAI — LLM Recruiter Outreach Platform</div>
+        <div class="pdesc">FastAPI + React + PostgreSQL platform. Gemini 2.5 Flash generates and scores outreach emails (tone / relevance / professionalism) before send. dbt models track outreach funnel and LLM prompt performance. 5 Airflow DAGs, 15-test pytest suite, GitHub Actions CI/CD.</div>
+        <div class="pstack"><span class="stag">FastAPI</span><span class="stag">Gemini 2.5 Flash</span><span class="stag">dbt</span><span class="stag">Airflow</span><span class="stag">PostgreSQL</span><span class="stag">React/TS</span><span class="stag">Docker</span></div>
+        <div class="plinks"><a href="https://github.com/Poojareddy0/auto-mail-sender-LLM" target="_blank" class="plink gh">GitHub</a></div>
+      </div>
+
+      <!-- 06 AR CARDIO — no public repo yet -->
+      <div class="pc rv d6" data-cat="res">
+        <div class="pc-toprow"><span class="pcat res">Research</span></div>
+        <span class="plabel active">Active · UC Medical Center</span>
+        <div class="ptitle">AR_Cardio — Cardiac Vessel Segmentation</div>
+        <div class="pdesc">U-Net pipeline segmenting Aorta, LAD, LIMA from CT scans (1,559 DICOM files). Exports 5-structure colored 3D STL models for surgical planning and 3D printing. Phase 1 complete: LIMA Dice 0.897. Phase 2 targeting 50–100 patients pending IRB approval.</div>
+        <div class="pstack"><span class="stag">TensorFlow</span><span class="stag">U-Net</span><span class="stag">DICOM</span><span class="stag">Python 3.9</span><span class="stag">3D STL</span><span class="stag">NumPy</span></div>
+        <div class="plinks"><span style="font-family:var(--mono);font-size:10px;color:var(--tx3);letter-spacing:.06em">Repo private during IRB review</span></div>
+      </div>
+
+      <!-- 07 HATE SPEECH -->
+      <div class="pc rv d7" data-cat="res">
+        <div class="pc-toprow"><span class="pcat res">Research</span></div>
+        <span class="plabel pub">★ Published · Springer · 2024</span>
+        <div class="ptitle">Hate Speech Detection</div>
+        <div class="pdesc">Published in Springer (2024) at ICDMLA. Multi-model NLP pipeline (Decision Trees, KNN, Random Forest) for social media hate speech detection. Key finding: hate speech lacks unique discriminative linguistic features — contributed a novel methodological insight to the literature.</div>
+        <div class="pstack"><span class="stag">Python</span><span class="stag">Scikit-Learn</span><span class="stag">NLP</span><span class="stag">WordCloud</span><span class="stag">LazyPredict</span><span class="stag">Pandas</span></div>
+        <div class="plinks">
+          <a href="https://github.com/Poojareddy0/hate-speech-detection" target="_blank" class="plink gh">GitHub</a>
+          <a href="https://link.springer.com/chapter/10.1007/978-981-97-8031-0_2" target="_blank" class="plink gh">Springer ↗</a>
+        </div>
+      </div>
+
+      <!-- 08 ABDOMINAL -->
+      <div class="pc rv d8" data-cat="res">
+        <div class="pc-toprow"><span class="pcat res">Research</span></div>
+        <span class="plabel teal">Seeded AR_Cardio Collaboration</span>
+        <div class="ptitle">Abdominal Trauma Detection</div>
+        <div class="pdesc">CNN-based pipeline for automated abdominal trauma detection in CT scans with SHAP explainability for clinical interpretability. This project led directly to the AR_Cardio collaboration — the UC Medical Center surgeon reached out after seeing it on the resume.</div>
+        <div class="pstack"><span class="stag">TensorFlow</span><span class="stag">CNN</span><span class="stag">SHAP</span><span class="stag">Python</span><span class="stag">OpenCV</span></div>
+        <div class="plinks"><a href="https://github.com/Poojareddy0/abdominal-trauma-detection" target="_blank" class="plink gh">GitHub</a></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="rule"></div>
+
+<!-- SKILLS -->
+<section id="skills" class="sec">
+  <div class="wrap">
+    <p class="eye rv">Stack</p>
+    <h2 class="sh rv d1">Technical <em>Skills</em></h2>
+    <div class="sgrid">
+      <div class="rv"><div class="sgh">Languages</div><div class="sgp"><span class="pill">Python</span><span class="pill">SQL (T-SQL / PostgreSQL)</span><span class="pill">PySpark</span><span class="pill">Bash</span></div></div>
+      <div class="rv d1"><div class="sgh">Azure</div><div class="sgp"><span class="pill">ADF</span><span class="pill">Synapse</span><span class="pill">Event Hubs</span><span class="pill">Databricks</span><span class="pill">ADLS</span><span class="pill">Azure DevOps</span></div></div>
+      <div class="rv d2"><div class="sgh">AWS</div><div class="sgp"><span class="pill">Redshift</span><span class="pill">S3</span><span class="pill">Glue</span><span class="pill">Kinesis</span><span class="pill">MSK</span><span class="pill">Lambda</span><span class="pill">Step Functions</span><span class="pill">CloudWatch</span></div></div>
+      <div class="rv"><div class="sgh">GCP &amp; Snowflake</div><div class="sgp"><span class="pill">BigQuery</span><span class="pill">Dataflow</span><span class="pill">Snowflake</span></div></div>
+      <div class="rv d1"><div class="sgh">Data Engineering</div><div class="sgp"><span class="pill">Apache Kafka</span><span class="pill">Debezium CDC</span><span class="pill">Airflow</span><span class="pill">dbt</span><span class="pill">Delta Lake</span><span class="pill">Apache Iceberg</span><span class="pill">OpenLineage</span><span class="pill">Medallion Architecture</span><span class="pill">Splunk</span></div></div>
+      <div class="rv d2"><div class="sgh">ML / AI</div><div class="sgp"><span class="pill">TensorFlow</span><span class="pill">PyTorch</span><span class="pill">Scikit-Learn</span><span class="pill">MLflow</span><span class="pill">U-Net</span><span class="pill">MMD Drift Detection</span><span class="pill">RAG</span><span class="pill">Gemini API</span><span class="pill">Pandas</span><span class="pill">NumPy</span></div></div>
+      <div class="rv"><div class="sgh">BI &amp; Quality</div><div class="sgp"><span class="pill">Power BI</span><span class="pill">Tableau</span><span class="pill">Great Expectations</span><span class="pill">Schema Drift Detection</span><span class="pill">Data Lineage</span></div></div>
+      <div class="rv d1"><div class="sgh">DevOps</div><div class="sgp"><span class="pill">CI/CD</span><span class="pill">GitHub Actions</span><span class="pill">Azure DevOps</span><span class="pill">Docker</span><span class="pill">Terraform</span></div></div>
+      <div class="rv d2"><div class="sgh">Compliance</div><div class="sgp"><span class="pill">SOX</span><span class="pill">GDPR</span><span class="pill">CCPA</span><span class="pill">PII Masking</span><span class="pill">IAM Access Controls</span><span class="pill">Audit Logging</span></div></div>
+    </div>
+  </div>
+</section>
+<div class="rule"></div>
+
+<!-- HACKATHONS -->
+<section id="hackathons" class="sec">
+  <div class="wrap">
+    <p class="eye rv">Competitions</p>
+    <h2 class="sh rv d1">Hackathons &amp; <em>Challenges</em></h2>
+    <div class="hk-grid">
+
+      <div class="hk-card rv">
+        <span class="hk-tag">Computer Vision · AI</span>
+        <div class="hk-event">WeCrafts Event</div>
+        <div class="hk-title">AI-Powered Handloom Authentication System</div>
+        <div class="hk-desc">Built an app that detects the quality of fabric and determines whether it is original handloom-woven or machine-made — helping preserve and authenticate traditional artisan work. Used image classification and texture analysis to distinguish hand-weaving patterns from machine-produced imitations.</div>
+        <div class="hk-stack">
+          <span class="htag">Computer Vision</span><span class="htag">Image Classification</span><span class="htag">Python</span><span class="htag">AI/ML</span>
+        </div>
+      </div>
+
+      <div class="hk-card rv d1">
+        <span class="hk-tag">YOLO · OCR · Document AI</span>
+        <div class="hk-event">Hackathon</div>
+        <div class="hk-title">AI Document Validation for Government Scheme Applications</div>
+        <div class="hk-desc">Developed an AI system that automatically detects misplaced document uploads (Aadhaar, PAN, signature, photographs) in government scheme applications using YOLO-based classification and OCR validation. Implemented real-time quality checks and field-level verification, reducing form rejection rates and manual review effort.</div>
+        <div class="hk-stack">
+          <span class="htag">YOLO</span><span class="htag">OCR</span><span class="htag">Document Classification</span><span class="htag">Python</span><span class="htag">Computer Vision</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- BEYOND CODE -->
+<section id="beyond" class="sec">
+  <div class="wrap">
+    <p class="eye rv">Beyond the screen</p>
+    <h2 class="sh rv d1">A little more about <em>me</em></h2>
+    <div class="beyond-row">
+
+      <div class="beyond-card rv">
+        <span class="beyond-icon">🎭</span>
+        <div class="beyond-title">Kuchipudi Dancer</div>
+        <div class="beyond-sub">Trained classical dancer in Kuchipudi, one of India's major classical dance forms. Years of rigorous practice taught discipline, precision, and performance under pressure — qualities that carry over into engineering.</div>
+      </div>
+
+      <div class="beyond-card rv d1">
+        <span class="beyond-icon">🎨</span>
+        <div class="beyond-title">Artist</div>
+        <div class="beyond-sub">Painter working across multiple styles. Creating art sharpens the ability to see structure in complexity — useful when designing data models and system architecture diagrams that need to communicate clearly at a glance.</div>
+      </div>
+
+      <div class="beyond-card rv d2">
+        <span class="beyond-icon">🏸</span>
+        <div class="beyond-title">Badminton Player</div>
+        <div class="beyond-sub">Competitive badminton player. The sport demands fast decision-making, spatial awareness, and staying calm under pressure — skills that translate directly to debugging production pipelines at 2am.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- CONTACT -->
+<section id="contact" class="sec">
+  <div class="wrap">
+    <div class="cw">
+      <p class="eye rv" style="text-align:center">Let's connect</p>
+      <h2 class="sh rv d1" style="text-align:center">Open to <em>Opportunities</em></h2>
+      <p class="rv d2">Actively seeking Data Engineer, Analytics Engineer, Data Analyst, and BI Engineer roles — also open to AI/ML and MLOps positions. If you're building serious data infrastructure, I'd love to talk.</p>
+      <div class="cls rv d3">
+        <a href="mailto:poojaputta3699@gmail.com" class="cl">poojaputta3699@gmail.com</a>
+        <a href="tel:+15135451119" class="cl">+1 513-545-1119</a>
+        <a href="https://linkedin.com/in/poojaputta" target="_blank" class="cl">LinkedIn</a>
+        <a href="https://github.com/Poojareddy0" target="_blank" class="cl">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="fl">© 2026 Pooja Putta — Data Engineer</span>
+  <span class="fr"><span class="pulse"></span>Open to New Roles</span>
+</footer>
+
+<script>
+function filterProj(cat, btn) {
+  document.querySelectorAll('.pf-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('#pgrid .pc').forEach(card => {
+    card.classList.toggle('hidden', cat !== 'all' && card.dataset.cat !== cat);
+  });
+}
+function toggleCS() {
+  const full = document.getElementById('cs-full');
+  const btn  = document.getElementById('cs-btn');
+  const isOpen = full.classList.toggle('open');
+  if (btn) btn.innerHTML = isOpen ? 'Show less <em class="cs-toggle-icon" style="transform:rotate(45deg)">+</em>' : 'Read more <em class="cs-toggle-icon">+</em>';
+  if (isOpen) full.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+}, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
