@@ -43,15 +43,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;justify-content
 
 /* ── HERO ── */
 #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:9rem 4rem 5rem;position:relative;overflow:hidden}
-.hbg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 65% 55% at 8% 38%,rgba(12,34,52,.65) 0%,transparent 68%),radial-gradient(ellipse 45% 38% at 88% 72%,rgba(14,28,18,.45) 0%,transparent 68%)}
-.hgrid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--ln) 1px,transparent 1px),linear-gradient(90deg,var(--ln) 1px,transparent 1px);background-size:58px 58px;opacity:.28;mask-image:radial-gradient(ellipse 85% 85% at 50% 50%,black 25%,transparent 78%)}
+.hbg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 45% at 5% 60%,rgba(10,26,40,.4) 0%,transparent 65%)}
+.hgrid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--ln) 1px,transparent 1px),linear-gradient(90deg,var(--ln) 1px,transparent 1px);background-size:72px 72px;opacity:.1;mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.5) 50%,rgba(0,0,0,.5) 75%,transparent 100%)}
 .hav{position:absolute;top:6.2rem;right:4rem;font-family:var(--mono);font-size:10px;color:var(--teal);border:1px solid var(--teal2);padding:.42rem .95rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:.45rem;background:rgba(0,0,0,.45)}
 .pulse{width:5px;height:5px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
 .hey{font-family:var(--mono);font-size:11px;color:var(--teal);letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.75rem;display:flex;align-items:center;gap:.9rem}
 .hey::before{content:'';width:36px;height:1px;background:var(--teal)}
-.hn{font-family:var(--serif);font-size:clamp(4.5rem,9.5vw,9.2rem);line-height:.91;font-weight:400;color:var(--tx0);margin-bottom:.45rem}
-.hn em{font-style:italic;color:var(--teal)}
+.hn{font-family:var(--serif);font-size:clamp(4.8rem,10vw,10rem);line-height:.95;font-weight:400;color:var(--tx0);margin-bottom:.5rem;letter-spacing:-.01em}
+.hn-first{display:block;color:#f5f0e8;font-style:normal}
+.hn-last{display:block;font-style:italic;color:var(--teal);font-size:1.08em}
+.hn-dot{color:var(--tx2)}
 .hr2{font-family:var(--mono);font-size:13px;color:var(--tx1);letter-spacing:.06em;margin-bottom:1.5rem}
 .roles-primary{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.55rem}
 .roles-secondary{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.75rem;align-items:center}
@@ -195,8 +197,9 @@ footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-
 .d5{transition-delay:.4s}.d6{transition-delay:.48s}.d7{transition-delay:.56s}.d8{transition-delay:.64s}
 
 /* ── INLINE ROLE LINES ── */
-.hroles{font-size:1rem;color:var(--tx0);letter-spacing:.03em;margin-bottom:.4rem;font-weight:400;line-height:1.6}
-.hroles2{font-family:var(--mono);font-size:11px;color:var(--tx2);letter-spacing:.04em;margin-bottom:1.75rem}
+.hroles{font-size:1.05rem;color:var(--tx0);letter-spacing:.03em;margin-bottom:.45rem;font-weight:500}
+.hroles span.hi{color:var(--teal)}
+.hroles2{font-family:var(--mono);font-size:11px;color:var(--tx1);letter-spacing:.04em;margin-bottom:1.75rem}
 
 /* ── COLLAPSIBLE CASE STUDY ── */
 .cs-teaser{}
@@ -260,10 +263,10 @@ footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-
   <div class="hgrid"></div>
   <div class="hav"><span class="pulse"></span>Open to New Roles</div>
   <p class="hey rv">3+ Years · Azure · AWS · Databricks · Snowflake</p>
-  <h1 class="hn rv d1">Pooja<br><em>Putta.</em></h1>
+  <h1 class="hn rv d1"><span class="hn-first">Pooja</span><span class="hn-last">Putta<span class="hn-dot">.</span></span></h1>
   <p class="hr2 rv d2">M.Eng. Computer Science · University of Cincinnati · 4.0 GPA</p>
-  <p class="hroles rv d2">Data Engineer &nbsp;·&nbsp; Analytics Engineer &nbsp;·&nbsp; Data Analyst &nbsp;·&nbsp; BI Engineer</p>
-  <p class="hroles2 rv d3">Also open to: AI/ML Engineer &nbsp;·&nbsp; ML Data Engineer &nbsp;·&nbsp; MLOps Engineer</p>
+  <p class="hroles rv d2">Data Engineer &nbsp;·&nbsp; <span class="hi">AI/ML Engineer</span> &nbsp;·&nbsp; Analytics Engineer &nbsp;·&nbsp; <span class="hi">ML Data Engineer</span></p>
+  <p class="hroles2 rv d3">Also open to: Data Analyst &nbsp;·&nbsp; BI Engineer &nbsp;·&nbsp; MLOps Engineer</p>
   <div class="cert-row rv d3">
     <span class="cert">✓ Azure Data Engineer Associate (DP-203)</span>
     <span class="cert">✓ AWS Certified Data Engineer</span>
@@ -297,8 +300,8 @@ footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-
         <div class="ar"><span class="al">Education</span><span class="av">M.Eng. Computer Science · University of Cincinnati · GPA 4.0 / 4.0</span></div>
         <div class="ar"><span class="al">Certs</span><span class="av">Azure DP-203 · AWS Data Engineer · IBM Data Engineering</span></div>
         <div class="ar"><span class="al">Location</span><span class="av">Cincinnati, OH · Open to remote &amp; US relocation</span></div>
-        <div class="ar"><span class="al">Primary</span><span class="av">Data Engineer · Analytics Engineer · Data Analyst · BI Engineer</span></div>
-        <div class="ar"><span class="al">Also open</span><span class="av">AI/ML Engineer · ML Data Engineer · MLOps Engineer</span></div>
+        <div class="ar"><span class="al">Primary</span><span class="av">Data Engineer · AI/ML Engineer · Analytics Engineer · ML Data Engineer</span></div>
+        <div class="ar"><span class="al">Also open</span><span class="av">Data Analyst · BI Engineer · MLOps Engineer</span></div>
         <div class="ar"><span class="al">Email</span><span class="av"><a href="mailto:poojaputta3699@gmail.com" style="color:var(--teal)">poojaputta3699@gmail.com</a></span></div>
         <div class="ar"><span class="al">Phone</span><span class="av"><a href="tel:+15135451119" style="color:var(--teal)">+1 513-545-1119</a></span></div>
       </div>
@@ -609,7 +612,7 @@ footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-
     <div class="cw">
       <p class="eye rv" style="text-align:center">Let's connect</p>
       <h2 class="sh rv d1" style="text-align:center">Open to <em>Opportunities</em></h2>
-      <p class="rv d2">Actively seeking Data Engineer, Analytics Engineer, Data Analyst, and BI Engineer roles — also open to AI/ML and MLOps positions. If you're building serious data infrastructure, I'd love to talk.</p>
+      <p class="rv d2">Actively seeking Data Engineer, AI/ML Engineer, Analytics Engineer, and ML Data Engineer roles — also open to Data Analyst, BI Engineer, and MLOps positions. If you're building serious data infrastructure, I'd love to talk.</p>
       <div class="cls rv d3">
         <a href="mailto:poojaputta3699@gmail.com" class="cl">poojaputta3699@gmail.com</a>
         <a href="tel:+15135451119" class="cl">+1 513-545-1119</a>
