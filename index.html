@@ -323,7 +323,7 @@ footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-
       <div>
         <div class="etitle">Research Associate</div>
         <ul class="ebl">
-          <li>Building an AI data pipeline that ingests chest CT scans, preprocesses 1,559 DICOM images per patient, and segments 3 cardiac vessels (Aorta, LAD, LIMA) using a U-Net model — reducing surgical segmentation from days to minutes</li>
+          <li>Building an AI data pipeline that ingests chest CT scans, preprocesses 1,559 DICOM images per patient, and segments 5 cardiac structures (Aorta, LAD, LIMA, Heart, Ribs) using a U-Net model — exporting colored 3D STL files for surgical planning and intraoperative AR overlay</li>
           <li>Engineered the full ML pipeline: DICOM ingestion → voxelization → augmentation → model training → inference → colored STL export for 3D printing and intraoperative AR overlay</li>
           <li>Achieved 0.897 Dice score on LIMA; applied weighted loss (10× class-imbalance penalty), tf.data prefetch, and incremental retraining to support new IRB-approved patient batches without full restarts</li>
         </ul>
