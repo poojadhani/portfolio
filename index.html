@@ -197,8 +197,8 @@ footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-
 .d5{transition-delay:.4s}.d6{transition-delay:.48s}.d7{transition-delay:.56s}.d8{transition-delay:.64s}
 
 /* ── INLINE ROLE LINES ── */
-.hroles{font-size:1.05rem;color:var(--tx0);letter-spacing:.03em;margin-bottom:.45rem;font-weight:500}
-.hroles span.hi{color:var(--teal)}
+.hroles{font-size:1.05rem;color:#f0ede6;letter-spacing:.03em;margin-bottom:.45rem;font-weight:500}
+.hroles .sep{color:var(--teal);margin:0 .35rem}
 .hroles2{font-family:var(--mono);font-size:11px;color:var(--tx1);letter-spacing:.04em;margin-bottom:1.75rem}
 
 /* ── COLLAPSIBLE CASE STUDY ── */
@@ -262,14 +262,13 @@ footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-
   <div class="hbg"></div>
   <div class="hgrid"></div>
   <div class="hav"><span class="pulse"></span>Open to New Roles</div>
-  <p class="hey rv">3+ Years · AWS · Azure · Databricks · Snowflake</p>
+  <p class="hey rv">3+ Years · Azure · AWS · Databricks · Snowflake</p>
   <h1 class="hn rv d1"><span class="hn-first">Pooja</span><span class="hn-last">Putta<span class="hn-dot">.</span></span></h1>
   <p class="hr2 rv d2">M.Eng. Computer Science · University of Cincinnati · 4.0 GPA</p>
-  <p class="hroles rv d2">Data Engineer &nbsp;·&nbsp; <span class="hi">AI/ML Engineer</span> &nbsp;·&nbsp; Analytics Engineer &nbsp;·&nbsp; <span class="hi">ML Data Engineer</span></p>
+  <p class="hroles rv d2" style="margin-bottom:1.75rem">Data Engineer<span class="sep">·</span>AI/ML Engineer<span class="sep">·</span>Analytics Engineer</p>
   <div class="cert-row rv d3">
     <span class="cert">✓ AWS Certified Data Engineer</span>
     <span class="cert">✓ IBM Data Engineering Professional</span>
-    <span class="cert"> Azure DP-203 (expired 2025)</span>
   </div>
   <div class="ha rv d4">
     <a href="#projects" class="bt">View Projects</a>
@@ -291,18 +290,17 @@ footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-
     <h2 class="sh rv d1"><em>Engineering</em> pipelines<br>teams depend on daily</h2>
     <div class="ag">
       <div class="ac rv">
-        <p>I'm a <strong>Data Engineer</strong> with 3+ years building cloud data pipelines, real-time streaming systems, and analytics platforms across Azure, AWS, Databricks, and Snowflake — processing 5TB+ daily across CDC replication, streaming ingestion, and Medallion Architecture.</p>
-        <p>At <strong>Wells Fargo</strong>, I owned ELT pipelines on Azure Data Factory and Databricks ingesting 5TB+ of daily banking transactions, built Kafka producers/consumers cutting latency from T+1 to under 5 minutes, and sustained 99.9% SLA across all client-facing pipelines.</p>
-        <p>Currently building an <strong>AI-powered cardiac vessel segmentation pipeline</strong> (U-Net, 0.897 Dice) for intraoperative AR at UC Medical Center — reducing surgical segmentation from days to minutes.</p>
+        <p>I'm a <strong>Data Engineer</strong> with 3+ years building cloud-native pipelines, real-time ingestion systems, and analytics platforms across AWS, Azure, Databricks, and Snowflake — delivering pipelines processing 5TB+ daily banking transactions, reducing data latency from T+1 to under 5 minutes, and sustaining 99.9% SLA through schema validation, observability, and automated deployment.</p>
+        <p>At <strong>Wells Fargo</strong>, I owned ELT pipelines on Azure Data Factory and Databricks, built Kafka producers/consumers for real-time ingestion, and enforced SOX/GDPR/CCPA compliance through the pipeline code itself. At <strong>UC Transportation</strong>, I built automated ingestion from 12 shuttle routes and delivered Power BI dashboards that replaced fully manual reporting.</p>
+        <p>Currently building <strong>medical imaging data pipelines for AI-assisted clinical research</strong> at UC Medical Center — U-Net segmenting 6 cardiac structures with 0.897 Dice on LIMA. Published researcher, Springer ICDMLA 2024.</p>
       </div>
       <div class="am rv d1">
         <div class="ar"><span class="al">Education</span><span class="av">M.Eng. Computer Science · University of Cincinnati · GPA 4.0 / 4.0</span></div>
-        <div class="ar"><span class="al">Certs</span><span class="av">AWS Data Engineer · IBM Data Engineering · Azure DP-203 (expired 2025)</span></div>
-        <div class="ar"><span class="al">Location</span><span class="av">Open to remote &amp; US relocation</span></div>
-        <div class="ar"><span class="al">Primary</span><span class="av">Data Engineer · AI/ML Engineer · Analytics Engineer · ML Data Engineer</span></div>
-        <div class="ar"><span class="al">Also open</span><span class="av">Data Analyst · BI Engineer · MLOps Engineer</span></div>
+        <div class="ar"><span class="al">Certs</span><span class="av">AWS Certified Data Engineer · IBM Data Engineering Professional</span></div>
+        <div class="ar"><span class="al">Location</span><span class="av">Cincinnati, OH · Open to remote &amp; US relocation</span></div>
+        <div class="ar"><span class="al">Targeting</span><span class="av">Data Engineer · AI/ML Engineer · Analytics Engineer</span></div>
         <div class="ar"><span class="al">Email</span><span class="av"><a href="mailto:poojaputta3699@gmail.com" style="color:var(--teal)">poojaputta3699@gmail.com</a></span></div>
-        <div class="ar"><span class="al">Phone</span><span class="av"><a href="tel:+15135451119" style="color:var(--teal)">+1 513-545-1119</a></span></div>
+        <div class="ar"><span class="al">Phone</span><span class="av"><a href="tel:+16158640495" style="color:var(--teal)">+1 615-864-0495</a></span></div>
       </div>
     </div>
   </div>
@@ -318,18 +316,37 @@ footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-
       <div class="es">
         <div class="ep">Mar 2026<br>Present</div>
         <div class="eco">UC Medical Center</div>
-        <div class="eloc">Cincinnati, OH · Remote-eligible</div>
+        <div class="eloc">Cincinnati, OH</div>
       </div>
       <div>
         <div class="etitle">Research Associate</div>
         <ul class="ebl">
-          <li>Building an AI data pipeline that ingests chest CT scans, preprocesses 1,559 DICOM images per patient, and segments 5 cardiac structures (Aorta, LAD, LIMA, Heart, Ribs) using a U-Net model — exporting colored 3D STL files for surgical planning and intraoperative AR overlay</li>
-          <li>Engineered the full ML pipeline: DICOM ingestion → voxelization → augmentation → model training → inference → colored STL export for 3D printing and intraoperative AR overlay</li>
-          <li>Achieved 0.897 Dice score on LIMA; applied weighted loss (10× class-imbalance penalty), tf.data prefetch, and incremental retraining to support new IRB-approved patient batches without full restarts</li>
+          <li>Built an end-to-end medical imaging pipeline processing 1,559 DICOM files per patient — handling inconsistent DICOM metadata and automating SMARTPHASE series selection, STL-to-voxel conversion, U-Net inference, and color-coded STL export to support 3D surgical modeling and intraoperative AR visualization</li>
+          <li>Trained a U-Net segmenting 6 cardiac structures (Aorta, LAD, LIMA, Heart, Ribs, Sternum) with weighted loss up to 12× for class imbalance; achieved 0.897 Dice on LIMA, establishing a reproducible baseline for future patient cohorts</li>
+          <li>Designed incremental retraining so new patient batches onboard without full pipeline restarts, ensuring reproducible inference across batches — serving as the sole engineer collaborating directly with the clinical research team</li>
         </ul>
         <div class="echips"><span class="ch">TensorFlow</span><span class="ch">U-Net</span><span class="ch">DICOM</span><span class="ch">Python</span><span class="ch">3D STL</span><span class="ch">NumPy</span></div>
       </div>
     </div>
+
+    <!-- UC TRANSPORTATION -->
+    <div class="ei rv">
+      <div class="es">
+        <div class="ep">Sep 2024<br>Apr 2026</div>
+        <div class="eco">University of Cincinnati</div>
+        <div class="eloc">Cincinnati, OH</div>
+      </div>
+      <div>
+        <div class="etitle">Data Research Assistant</div>
+        <ul class="ebl">
+          <li>Built an automated ingestion system polling real-time GPS location and ridership data from 12 shuttle routes via REST APIs every 30 minutes; stored 8,000+ daily records as raw JSON in AWS S3, replacing fully manual data collection</li>
+          <li>Engineered SQL and Pandas transformation pipelines to clean, deduplicate, and model raw API payloads into analysis-ready datasets; maintained automated weekly refresh pipelines cutting manual report preparation time by 60%</li>
+          <li>Delivered 3 Power BI dashboards tracking route utilization, peak-hour ridership, and scheduling patterns — providing operations staff with visibility into scheduling gaps across all 12 routes to support data-driven planning decisions</li>
+        </ul>
+        <div class="echips"><span class="ch">Python</span><span class="ch">REST APIs</span><span class="ch">AWS S3</span><span class="ch">SQL</span><span class="ch">Pandas</span><span class="ch">Power BI</span></div>
+      </div>
+    </div>
+
     <div class="ei rv">
       <div class="es">
         <div class="ep">Jan 2022<br>Jul 2024</div>
@@ -339,13 +356,13 @@ footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-
       <div>
         <div class="etitle">Data Engineer</div>
         <ul class="ebl">
-          <li>Designed and owned ELT pipelines on Azure Data Factory and Databricks, ingesting 5TB+ of daily banking transactions into a Delta Lake Medallion Architecture (Bronze/Silver/Gold) for 3 regional analytics teams</li>
-          <li>Built Apache Kafka (Confluent) producers/consumers for real-time transaction and clickstream ingestion — cut data latency from T+1 batch to under 5 minutes, enabling near-real-time fraud monitoring dashboards</li>
-          <li>Optimized Databricks Spark jobs via partitioning, Z-ordering, vectorized Parquet I/O, and Delta Lake compaction — reduced cloud compute costs 20% and improved query performance 50%</li>
-          <li>Deployed pipeline observability with Splunk alerting and automated schema validation; reduced silent data failures 25% and sustained 99.9% SLA on all client-facing pipelines</li>
-          <li>Enforced SOX, GDPR, and CCPA compliance via PII masking, IAM access controls, and data lineage tracking; built CI/CD with GitHub Actions and Azure DevOps for automated PySpark deployment</li>
+          <li>Designed and owned ELT ingestion pipelines on Azure Data Factory and Databricks processing 5TB+ of daily banking transactions into a Delta Lake Medallion Architecture (Bronze/Silver/Gold), ensuring reliable, audit-ready data storage for 3 regional analytics teams</li>
+          <li>Built star schema data models on top of the Medallion layers enabling consistent, self-service reporting across Power BI and Tableau; partnered with BI engineers and product managers to define SLAs and deliver high-quality datasets</li>
+          <li>Built Apache Kafka (Confluent) producers/consumers for real-time banking transaction ingestion — cut data latency from T+1 batch to under 5 minutes, enabling near-real-time fraud monitoring dashboards</li>
+          <li>Deployed Splunk observability and automated schema validation across all pipelines; reduced silent data failures by 25% and sustained 99.9% SLA; partnered with analysts to improve data availability and self-service reporting</li>
+          <li>Enforced SOX, GDPR, and CCPA compliance via PII masking, IAM access controls, and data lineage tracking; built CI/CD with GitHub Actions and Azure DevOps for automated pipeline deployment across environments</li>
         </ul>
-        <div class="echips"><span class="ch">Azure ADF</span><span class="ch">Databricks</span><span class="ch">Delta Lake</span><span class="ch">Kafka (Confluent)</span><span class="ch">PySpark</span><span class="ch">Splunk</span><span class="ch">Azure DevOps</span><span class="ch">GitHub Actions</span></div>
+        <div class="echips"><span class="ch">Azure ADF</span><span class="ch">Databricks</span><span class="ch">Delta Lake</span><span class="ch">Kafka (Confluent)</span><span class="ch">PySpark</span><span class="ch">Splunk</span><span class="ch">Power BI</span><span class="ch">Tableau</span><span class="ch">Azure DevOps</span></div>
       </div>
     </div>
   </div>
@@ -362,7 +379,7 @@ footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-
     <div class="cs-teaser rv d2">
       <p class="cs-intro">A personal project simulating a change data capture system — from PostgreSQL source to Redshift Serverless analytics target. Built to demonstrate production CDC patterns: schema evolution, idempotent consumers, end-to-end data lineage, and infrastructure-as-code.</p>
       <div style="display:flex;gap:3rem;flex-wrap:wrap;margin-top:1.75rem">
-        <div><span style="font-family:var(--mono);font-size:10px;color:var(--tx2);text-transform:uppercase;letter-spacing:.1em">Stack</span><br><span style="font-size:.88rem;color:var(--tx1);margin-top:.35rem;display:block">Debezium · Amazon MSK · AWS Glue · Redshift Serverless · OpenLineage · dbt · Terraform</span></div>
+        <div><span style="font-family:var(--mono);font-size:10px;color:var(--tx2);text-transform:uppercase;letter-spacing:.1em">Stack</span><br><span style="font-size:.88rem;color:var(--tx1);margin-top:.35rem;display:block">Debezium · Amazon MSK · AWS Glue · Redshift · OpenLineage · dbt · Terraform</span></div>
         <div><span style="font-family:var(--mono);font-size:10px;color:var(--tx2);text-transform:uppercase;letter-spacing:.1em">Key result</span><br><span style="font-family:var(--serif);font-size:1.5rem;color:var(--teal);display:block;margin-top:.2rem">&lt;30s replication lag &nbsp;·&nbsp; 5K+ events/sec</span></div>
       </div>
       <a href="https://github.com/Poojareddy0/cdc_replication" target="_blank" class="cs-github-link" style="margin-top:1.25rem">View on GitHub</a>
@@ -436,7 +453,7 @@ footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-
         <span class="plabel feat">Featured Project</span>
         <div class="ptitle">CDC Replication Pipeline</div>
         <div class="pdesc">PostgreSQL WAL → Debezium → Amazon MSK → AWS Glue → Redshift Serverless. Idempotent consumers with DynamoDB offset tracking, Avro schema evolution, OpenLineage lineage graph, and full Terraform-managed AWS infra. Replication lag under 30 seconds.</div>
-        <div class="pstack"><span class="stag">Debezium</span><span class="stag">Amazon MSK</span><span class="stag">AWS Glue</span><span class="stag">Redshift Serverless</span><span class="stag">OpenLineage</span><span class="stag">dbt</span><span class="stag">Terraform</span></div>
+        <div class="pstack"><span class="stag">Debezium</span><span class="stag">Amazon MSK</span><span class="stag">AWS Glue</span><span class="stag">Redshift</span><span class="stag">OpenLineage</span><span class="stag">dbt</span><span class="stag">Terraform</span></div>
         <div class="plinks">
           <a href="https://github.com/Poojareddy0/cdc_replication" target="_blank" class="plink gh">GitHub</a>
           <a href="#casestudy" class="plink">Case Study ↓</a>
@@ -450,7 +467,7 @@ footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-
         <div class="ptitle">AI Data Pipeline + RAG with Drift Detection</div>
         <div class="pdesc">Hybrid retrieval pipeline combining Pinecone vector search and Snowflake structured features. MMD drift detection flags embedding distribution shifts before they degrade retrieval quality. MLflow cost tracking per run across 10K+ events/sec on 8 Kafka partitions.</div>
         <div class="pstack"><span class="stag">OpenAI</span><span class="stag">Pinecone</span><span class="stag">Snowflake</span><span class="stag">Kafka</span><span class="stag">MLflow</span><span class="stag">MMD Drift</span><span class="stag">Airflow</span></div>
-        <div class="plinks"><a href="https://github.com/Poojareddy0/ai_rag_pipeline" target="_blank" class="plink gh">GitHub</a></div>
+        <div class="plinks"><a href="https://github.com/Poojareddy0/ai_pipeline" target="_blank" class="plink gh">GitHub</a></div>
       </div>
 
       <!-- 03 FRAUD -->
@@ -480,7 +497,7 @@ footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-
         <div class="ptitle">OutreachAI — LLM Recruiter Outreach Platform</div>
         <div class="pdesc">FastAPI + React + PostgreSQL platform. Gemini 2.5 Flash generates and scores outreach emails (tone / relevance / professionalism) before send. dbt models track outreach funnel and LLM prompt performance. 5 Airflow DAGs, 15-test pytest suite, GitHub Actions CI/CD.</div>
         <div class="pstack"><span class="stag">FastAPI</span><span class="stag">Gemini 2.5 Flash</span><span class="stag">dbt</span><span class="stag">Airflow</span><span class="stag">PostgreSQL</span><span class="stag">React/TS</span><span class="stag">Docker</span></div>
-        <div class="plinks"><a href="https://github.com/Poojareddy0/OutreachAI" target="_blank" class="plink gh">GitHub</a></div>
+        <div class="plinks"><a href="https://github.com/Poojareddy0/auto-mail-sender-LLM" target="_blank" class="plink gh">GitHub</a></div>
       </div>
 
       <!-- 06 AR CARDIO — no public repo yet -->
@@ -528,8 +545,8 @@ footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-
     <h2 class="sh rv d1">Technical <em>Skills</em></h2>
     <div class="sgrid">
       <div class="rv"><div class="sgh">Languages</div><div class="sgp"><span class="pill">Python</span><span class="pill">SQL (T-SQL / PostgreSQL)</span><span class="pill">PySpark</span><span class="pill">Bash</span></div></div>
-      <div class="rv d1"><div class="sgh">AWS</div><div class="sgp"><span class="pill">Redshift</span><span class="pill">S3</span><span class="pill">Glue</span><span class="pill">Kinesis</span><span class="pill">MSK</span><span class="pill">Lambda</span><span class="pill">Step Functions</span><span class="pill">CloudWatch</span></div></div>
-      <div class="rv d2"><div class="sgh">Azure</div><div class="sgp"><span class="pill">ADF</span><span class="pill">Synapse</span><span class="pill">Event Hubs</span><span class="pill">Databricks</span><span class="pill">ADLS</span><span class="pill">Azure DevOps</span></div></div>
+      <div class="rv d1"><div class="sgh">Azure</div><div class="sgp"><span class="pill">ADF</span><span class="pill">Synapse</span><span class="pill">Event Hubs</span><span class="pill">Databricks</span><span class="pill">ADLS</span><span class="pill">Azure DevOps</span></div></div>
+      <div class="rv d2"><div class="sgh">AWS</div><div class="sgp"><span class="pill">Redshift</span><span class="pill">S3</span><span class="pill">Glue</span><span class="pill">Kinesis</span><span class="pill">MSK</span><span class="pill">Lambda</span><span class="pill">Step Functions</span><span class="pill">CloudWatch</span></div></div>
       <div class="rv"><div class="sgh">GCP &amp; Snowflake</div><div class="sgp"><span class="pill">BigQuery</span><span class="pill">Dataflow</span><span class="pill">Snowflake</span></div></div>
       <div class="rv d1"><div class="sgh">Data Engineering</div><div class="sgp"><span class="pill">Apache Kafka</span><span class="pill">Debezium CDC</span><span class="pill">Airflow</span><span class="pill">dbt</span><span class="pill">Delta Lake</span><span class="pill">Apache Iceberg</span><span class="pill">OpenLineage</span><span class="pill">Medallion Architecture</span><span class="pill">Splunk</span></div></div>
       <div class="rv d2"><div class="sgh">ML / AI</div><div class="sgp"><span class="pill">TensorFlow</span><span class="pill">PyTorch</span><span class="pill">Scikit-Learn</span><span class="pill">MLflow</span><span class="pill">U-Net</span><span class="pill">MMD Drift Detection</span><span class="pill">RAG</span><span class="pill">Gemini API</span><span class="pill">Pandas</span><span class="pill">NumPy</span></div></div>
@@ -547,16 +564,6 @@ footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-
     <p class="eye rv">Competitions</p>
     <h2 class="sh rv d1">Hackathons &amp; <em>Challenges</em></h2>
     <div class="hk-grid">
-      
-      <div class="hk-card rv d2">
-        <span class="hk-tag">Data Science · Community</span>
-        <div class="hk-event">Women in Data Science (WiDS)</div>
-        <div class="hk-title">Participant — WiDS Global Conference</div>
-        <div class="hk-desc">Participated in the WiDS global conference and datathon, engaging with sessions on data engineering, ML pipelines, and AI ethics. Connected with practitioners across industry and research driving data-driven impact.</div>
-        <div class="hk-stack">
-          <span class="htag">Data Science</span><span class="htag">Machine Learning</span><span class="htag">AI Ethics</span><span class="htag">Networking</span>
-        </div>
-      </div>
 
       <div class="hk-card rv">
         <span class="hk-tag">Computer Vision · AI</span>
@@ -621,10 +628,10 @@ footer{padding:1.75rem 4rem;border-top:1px solid var(--ln);display:flex;justify-
     <div class="cw">
       <p class="eye rv" style="text-align:center">Let's connect</p>
       <h2 class="sh rv d1" style="text-align:center">Open to <em>Opportunities</em></h2>
-      <p class="rv d2">Actively seeking Data Engineer, AI/ML Engineer, Analytics Engineer, and ML Data Engineer roles — also open to Data Analyst, BI Engineer, and MLOps positions. If you're building serious data infrastructure, I'd love to talk.</p>
+      <p class="rv d2">Actively seeking Data Engineer and AI/ML Engineer roles. If you're building serious data infrastructure, I'd love to talk.</p>
       <div class="cls rv d3">
         <a href="mailto:poojaputta3699@gmail.com" class="cl">poojaputta3699@gmail.com</a>
-        <a href="tel:+15135451119" class="cl">+1 513-545-1119</a>
+        <a href="tel:+16158640495" class="cl">+1 615-864-0495</a>
         <a href="https://linkedin.com/in/poojaputta" target="_blank" class="cl">LinkedIn</a>
         <a href="https://github.com/Poojareddy0" target="_blank" class="cl">GitHub</a>
       </div>
